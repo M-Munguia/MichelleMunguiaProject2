@@ -39,7 +39,6 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // buttonEnter
@@ -177,19 +176,11 @@
             label7.TabIndex = 11;
             label7.Text = "X";
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Location = new Point(315, 88);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(374, 116);
-            flowLayoutPanel1.TabIndex = 12;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(764, 420);
-            Controls.Add(flowLayoutPanel1);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -220,6 +211,5 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
