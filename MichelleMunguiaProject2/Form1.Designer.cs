@@ -39,6 +39,7 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // buttonEnter
@@ -80,6 +81,7 @@
             // 
             label1.BackColor = SystemColors.Highlight;
             label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Cursor = Cursors.Hand;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(315, 255);
@@ -88,11 +90,14 @@
             label1.Size = new Size(35, 42);
             label1.TabIndex = 5;
             label1.Text = "X";
+            label1.UseMnemonic = false;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.BackColor = SystemColors.Highlight;
             label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Cursor = Cursors.Hand;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label2.ForeColor = SystemColors.Control;
             label2.Location = new Point(367, 255);
@@ -106,6 +111,7 @@
             // 
             label3.BackColor = SystemColors.Highlight;
             label3.BorderStyle = BorderStyle.FixedSingle;
+            label3.Cursor = Cursors.Hand;
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(419, 255);
@@ -119,6 +125,7 @@
             // 
             label4.BackColor = SystemColors.Highlight;
             label4.BorderStyle = BorderStyle.FixedSingle;
+            label4.Cursor = Cursors.Hand;
             label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(471, 255);
@@ -132,6 +139,7 @@
             // 
             label5.BackColor = SystemColors.Highlight;
             label5.BorderStyle = BorderStyle.FixedSingle;
+            label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(523, 255);
@@ -145,6 +153,7 @@
             // 
             label6.BackColor = SystemColors.Highlight;
             label6.BorderStyle = BorderStyle.FixedSingle;
+            label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label6.ForeColor = SystemColors.Control;
             label6.Location = new Point(575, 255);
@@ -158,6 +167,7 @@
             // 
             label7.BackColor = SystemColors.Highlight;
             label7.BorderStyle = BorderStyle.FixedSingle;
+            label7.Cursor = Cursors.Hand;
             label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label7.ForeColor = SystemColors.Control;
             label7.Location = new Point(627, 255);
@@ -167,11 +177,19 @@
             label7.TabIndex = 11;
             label7.Text = "X";
             // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Location = new Point(315, 88);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(374, 116);
+            flowLayoutPanel1.TabIndex = 12;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(764, 420);
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -202,5 +220,6 @@
         private Label label5;
         private Label label6;
         private Label label7;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
