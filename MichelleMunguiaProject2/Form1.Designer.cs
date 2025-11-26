@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonEnter = new Button();
+            buttonSubmit = new Button();
             BoxInput = new TextBox();
             BoxDisplay = new ListBox();
             labelTitle = new Label();
@@ -41,38 +41,43 @@
             label7 = new Label();
             SuspendLayout();
             // 
-            // buttonEnter
+            // buttonSubmit
             // 
-            buttonEnter.Location = new Point(577, 323);
-            buttonEnter.Name = "buttonEnter";
-            buttonEnter.Size = new Size(75, 23);
-            buttonEnter.TabIndex = 0;
-            buttonEnter.Text = "Enter";
-            buttonEnter.UseVisualStyleBackColor = true;
+            buttonSubmit.Location = new Point(1072, 689);
+            buttonSubmit.Margin = new Padding(6);
+            buttonSubmit.Name = "buttonSubmit";
+            buttonSubmit.Size = new Size(139, 49);
+            buttonSubmit.TabIndex = 0;
+            buttonSubmit.Text = "Submit";
+            buttonSubmit.UseVisualStyleBackColor = true;
+            buttonSubmit.Click += buttonSubmit_Click;
             // 
             // BoxInput
             // 
-            BoxInput.Location = new Point(327, 324);
+            BoxInput.Location = new Point(607, 691);
+            BoxInput.Margin = new Padding(6);
             BoxInput.Name = "BoxInput";
-            BoxInput.Size = new Size(208, 23);
+            BoxInput.ReadOnly = true;
+            BoxInput.Size = new Size(383, 39);
             BoxInput.TabIndex = 2;
             // 
             // BoxDisplay
             // 
             BoxDisplay.FormattingEnabled = true;
-            BoxDisplay.ItemHeight = 15;
-            BoxDisplay.Location = new Point(46, 88);
+            BoxDisplay.Location = new Point(85, 188);
+            BoxDisplay.Margin = new Padding(6);
             BoxDisplay.Name = "BoxDisplay";
-            BoxDisplay.Size = new Size(204, 259);
+            BoxDisplay.Size = new Size(375, 548);
             BoxDisplay.TabIndex = 3;
             // 
             // labelTitle
             // 
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Comic Sans MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTitle.Location = new Point(327, 25);
+            labelTitle.Location = new Point(607, 53);
+            labelTitle.Margin = new Padding(6, 0, 6, 0);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(317, 45);
+            labelTitle.Size = new Size(637, 90);
             labelTitle.TabIndex = 4;
             labelTitle.Text = "TWISTED WORDS";
             // 
@@ -83,14 +88,14 @@
             label1.Cursor = Cursors.Hand;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(315, 255);
-            label1.Margin = new Padding(10);
+            label1.Location = new Point(585, 544);
+            label1.Margin = new Padding(19, 21, 19, 21);
             label1.Name = "label1";
-            label1.Size = new Size(35, 42);
+            label1.Size = new Size(63, 87);
             label1.TabIndex = 5;
             label1.Text = "X";
             label1.UseMnemonic = false;
-            label1.Click += label1_Click;
+            label1.Click += Letter_Click;
             // 
             // label2
             // 
@@ -99,12 +104,13 @@
             label2.Cursor = Cursors.Hand;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(367, 255);
-            label2.Margin = new Padding(10);
+            label2.Location = new Point(682, 544);
+            label2.Margin = new Padding(19, 21, 19, 21);
             label2.Name = "label2";
-            label2.Size = new Size(35, 42);
+            label2.Size = new Size(63, 87);
             label2.TabIndex = 6;
             label2.Text = "X";
+            label2.Click += Letter_Click;
             // 
             // label3
             // 
@@ -113,12 +119,13 @@
             label3.Cursor = Cursors.Hand;
             label3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(419, 255);
-            label3.Margin = new Padding(10);
+            label3.Location = new Point(778, 544);
+            label3.Margin = new Padding(19, 21, 19, 21);
             label3.Name = "label3";
-            label3.Size = new Size(35, 42);
+            label3.Size = new Size(63, 87);
             label3.TabIndex = 7;
             label3.Text = "X";
+            label3.Click += Letter_Click;
             // 
             // label4
             // 
@@ -127,12 +134,13 @@
             label4.Cursor = Cursors.Hand;
             label4.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(471, 255);
-            label4.Margin = new Padding(10);
+            label4.Location = new Point(875, 544);
+            label4.Margin = new Padding(19, 21, 19, 21);
             label4.Name = "label4";
-            label4.Size = new Size(35, 42);
+            label4.Size = new Size(63, 87);
             label4.TabIndex = 8;
             label4.Text = "X";
+            label4.Click += Letter_Click;
             // 
             // label5
             // 
@@ -141,12 +149,13 @@
             label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label5.ForeColor = SystemColors.Control;
-            label5.Location = new Point(523, 255);
-            label5.Margin = new Padding(10);
+            label5.Location = new Point(971, 544);
+            label5.Margin = new Padding(19, 21, 19, 21);
             label5.Name = "label5";
-            label5.Size = new Size(35, 42);
+            label5.Size = new Size(63, 87);
             label5.TabIndex = 9;
             label5.Text = "X";
+            label5.Click += Letter_Click;
             // 
             // label6
             // 
@@ -155,12 +164,13 @@
             label6.Cursor = Cursors.Hand;
             label6.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label6.ForeColor = SystemColors.Control;
-            label6.Location = new Point(575, 255);
-            label6.Margin = new Padding(10);
+            label6.Location = new Point(1068, 544);
+            label6.Margin = new Padding(19, 21, 19, 21);
             label6.Name = "label6";
-            label6.Size = new Size(35, 42);
+            label6.Size = new Size(63, 87);
             label6.TabIndex = 10;
             label6.Text = "X";
+            label6.Click += Letter_Click;
             // 
             // label7
             // 
@@ -169,18 +179,19 @@
             label7.Cursor = Cursors.Hand;
             label7.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
             label7.ForeColor = SystemColors.Control;
-            label7.Location = new Point(627, 255);
-            label7.Margin = new Padding(10);
+            label7.Location = new Point(1164, 544);
+            label7.Margin = new Padding(19, 21, 19, 21);
             label7.Name = "label7";
-            label7.Size = new Size(35, 42);
+            label7.Size = new Size(63, 87);
             label7.TabIndex = 11;
             label7.Text = "X";
+            label7.Click += Letter_Click;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(764, 420);
+            ClientSize = new Size(1419, 896);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -191,7 +202,8 @@
             Controls.Add(labelTitle);
             Controls.Add(BoxDisplay);
             Controls.Add(BoxInput);
-            Controls.Add(buttonEnter);
+            Controls.Add(buttonSubmit);
+            Margin = new Padding(6);
             Name = "MainForm";
             Text = "FormText Twist by Munguia";
             ResumeLayout(false);
@@ -200,7 +212,7 @@
 
         #endregion
 
-        private Button buttonEnter;
+        private Button buttonSubmit;
         private TextBox BoxInput;
         private ListBox BoxDisplay;
         private Label labelTitle;
