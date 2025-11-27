@@ -3,6 +3,10 @@ using MichelleMunguiaProject2.Model;
 
 namespace MichelleMunguiaProject2;
 
+/// <summary>
+/// class for main form
+/// </summary>
+/// <seealso cref="System.Windows.Forms.Form" />
 public partial class MainForm : Form
 {
     private readonly WordController _controller;
@@ -63,7 +67,6 @@ public partial class MainForm : Form
     {
         var word = BoxInput.Text.Trim();
 
-        // Calculate elapsed time from countdown
         var elapsedTime = TimeSpan.FromSeconds(60 - _remainingTime);
 
         var result = _controller.SubmitWord(word, elapsedTime);
@@ -92,7 +95,6 @@ public partial class MainForm : Form
     {
         MessageBox.Show("Time's up!", "Round Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        // Show valid words and scores
         var totalPoints = 0;
         var summary = "Valid words:\n";
 
@@ -106,7 +108,6 @@ public partial class MainForm : Form
 
         MessageBox.Show(summary, "Round Summary", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        // Optionally start a new round
         _controller.StartNewRound();
         LoadLettersToLabels();
         StartRound();
