@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             buttonSubmit = new Button();
             BoxInput = new TextBox();
             BoxDisplay = new ListBox();
@@ -39,6 +40,8 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            gameTimer = new System.Windows.Forms.Timer(components);
+            labelTime = new Label();
             SuspendLayout();
             // 
             // buttonSubmit
@@ -187,11 +190,31 @@
             label7.Text = "X";
             label7.Click += Letter_Click;
             // 
+            // gameTimer
+            // 
+            gameTimer.Enabled = true;
+            gameTimer.Interval = 1000;
+            gameTimer.Tick += this.GameTimer;
+            // 
+            // labelTime
+            // 
+            labelTime.AutoSize = true;
+            labelTime.BackColor = SystemColors.ButtonHighlight;
+            labelTime.BorderStyle = BorderStyle.Fixed3D;
+            labelTime.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTime.ForeColor = Color.OrangeRed;
+            labelTime.Location = new Point(186, 107);
+            labelTime.Name = "labelTime";
+            labelTime.Size = new Size(151, 52);
+            labelTime.TabIndex = 15;
+            labelTime.Text = "label11";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1419, 896);
+            Controls.Add(labelTime);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -223,5 +246,7 @@
         private Label label5;
         private Label label6;
         private Label label7;
+        private System.Windows.Forms.Timer gameTimer;
+        private Label labelTime;
     }
 }

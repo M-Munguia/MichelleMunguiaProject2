@@ -1,36 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 
 namespace MichelleMunguiaProject2.Data
 {
+    /// <summary>
+    /// loads and validates words from a dictionary file
+    /// </summary>
     public class Dictionary
     {
-        private HashSet<string> words;
+        private readonly HashSet<string> _words;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Dictionary"/> class.
+        /// </summary>
+        /// <param name="fileName">Name of the file.</param>
+        /// <exception cref="System.IO.FileNotFoundException">Dictionary file not found: {path}</exception>
         public Dictionary(string fileName)
         {
-            // Build the path to the output folder
-            string path = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+            {
+                string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", fileName);
 
-            if (File.Exists(path))
-            {
+                if (!File.Exists(path))
+                    throw new FileNotFoundException($"Dictionary file not found: {path}");
+
                 string json = File.ReadAllText(path);
-                words = JsonSerializer.Deserialize<HashSet<string>>(json) ?? new HashSet<string>();
-            }
-            else
-            {
-                // fallback if file is missing
-                words = new HashSet<string>();
+
+                var data = JsonSerializer.Deserialize<List<LetterWords>>(json);
+
+                _words = new HashSet<string>();
+                if (data != null && data.Count > 0)
+                {
+                    foreach (var w in data[0].words)
+                        _words.Add(w.ToLower());
+                }
             }
         }
 
+        /// <summary>
+        /// Determines whether this instance contains the object.
+        /// </summary>
+        /// <param name="word">The word.</param>
+        /// <returns>
+        ///   <c>true</c> if [contains] [the specified word]; otherwise, <c>false</c>.
+        /// </returns>
         public bool Contains(string word)
             {
-                return words.Contains(word.ToLower());
+                return _words.Contains(word.ToLower());
             }
     }
 }
